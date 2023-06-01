@@ -25,17 +25,18 @@
     <main>
       <canvas id="gl1"></canvas>
     </main>
+    <footer id="location">&nbsp;</footer>
     <script type="module" async>
       import * as niivue from "./niivue.es.js";
       var volumeList1 = [
         // first item is background image
         {
           url: "../images/mni152.nii.gz", //"./images/RAS.nii.gz", "./images/spm152.nii.gz",
-          colorMap: "gray",
+          colormap: "gray",
         },
         {
           url: "../images/aal.nii.gz", //"./images/RAS.nii.gz", "./images/spm152.nii.gz",
-          colorMap: "random",
+          colormap: "random",
         },
       ];
       function handleLocationChange(data) {

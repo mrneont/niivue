@@ -12,7 +12,7 @@
       <strong>niivue requires JavaScript.</strong>
     </noscript>
     <header>
-      <select name="sliceType" id="sliceType" onchange="changeSliceType()">
+      <select id="sliceType">
         <option value="0">Axial</option>
         <option value="1">Coronal</option>
         <option value="2">Sagittal</option>
@@ -29,7 +29,8 @@
 <!-- <script type="module" async></script> -->
 <script type="module" async>
   import * as niivue from "./niivue.es.js";
-  function changeSliceType() {
+  var drop = document.getElementById("sliceType");
+  drop.onchange = function () {
     let st = parseInt(document.getElementById("sliceType").value);
     nv1.setSliceType(st);
   }
@@ -41,13 +42,13 @@
   var volumeList1 = [
     { 
       url: "../images/mni152.nii.gz",
-      colorMap: "gray",
+      colormap: "gray",
       visible: true,
       opacity: 1
     }, 
     {
       url: "../images/hippo.nii.gz", 
-      colorMap: "red",
+      colormap: "red",
       visible: true,
       opacity: 1
     }
